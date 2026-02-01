@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Countdown</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="min-h-screen bg-gray-900 text-gray-100 flex items-center justify-center px-4">
+
+  <div class="w-full max-w-md bg-gray-800 rounded-xl shadow-md p-6 space-y-5">
+
+    <!-- Título + Ícone -->
+    <div class="flex items-center gap-2">
+      <i class="bi bi-alarm-fill text-slate-400 text-xl"></i>
+      <h1 class="text-xl font-semibold tracking-tight">
+        Contador de Tempo
+      </h1>
+    </div>
+
+    <!-- Input -->
+    <div class="flex flex-col gap-1">
+      <label for="data" class="text-xs text-gray-400">
+        Selecione uma data futura
+      </label>
+      <input
+        type="datetime-local"
+        id="data"
+        class="bg-gray-700 text-sm text-gray-100 rounded-md px-3 py-2
+               outline-none focus:ring-1 focus:ring-indigo-500"
+      />
+    </div>
+
+    <!-- Botão -->
+    <button
+      id="iniciar"
+      class="w-full bg-indigo-600 hover:bg-indigo-500 transition-colors
+             rounded-md py-2 text-sm font-medium"
+    >
+      Iniciar contagem
+    </button>
+
+    <!-- Contador -->
+    <div id="contador" class="grid grid-cols-4 gap-3 text-center hidden">
+
+      <div class="bg-gray-700 rounded-lg px-3 py-2">
+        <p id="dias" class="text-xl font-semibold">0</p>
+        <span class="text-[11px] text-gray-400 uppercase tracking-wide">Dias</span>
+      </div>
+
+      <div class="bg-gray-700 rounded-lg px-3 py-2">
+        <p id="horas" class="text-xl font-semibold">0</p>
+        <span class="text-[11px] text-gray-400 uppercase tracking-wide">Horas</span>
+      </div>
+
+      <div class="bg-gray-700 rounded-lg px-3 py-2">
+        <p id="minutos" class="text-xl font-semibold">0</p>
+        <span class="text-[11px] text-gray-400 uppercase tracking-wide">Min</span>
+      </div>
+
+      <div class="bg-gray-700 rounded-lg px-3 py-2">
+        <p id="segundos" class="text-xl font-semibold">0</p>
+        <span class="text-[11px] text-gray-400 uppercase tracking-wide">Seg</span>
+      </div>
+
+    </div>
+
+    <!-- Mensagem -->
+    <p id="mensagem" class="text-center text-xs text-red-500 hidden">
+      Escolha uma data válida.
+    </p>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
